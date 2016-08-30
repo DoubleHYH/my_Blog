@@ -1,0 +1,38 @@
+{% if tags|mSeries %}
+	<div class="widget widget-recent-posts">
+		<h3 class="widget-title">系列文章</h3>
+		<ul>
+			{% for tag in tags|mSeries %}
+			<li>
+				<a href="#">{{ tag[0] }}  ({{ tag[1] }})</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endif %}
+
+{% if tags|mTagCloud %}
+	<div class="widget widget-archives">
+		<h3 class="widget-title">我的标签</h3>
+		<ul>
+			{% for tag in tags|mTagCloud %}
+			<li>
+				<a href="#">{{ tag[0] }}  ({{ tag[1] }})</a>
+			</li>
+			{% endfor %}
+		</ul>
+</div>
+{% endif %}
+
+{% if tags|mArchive %}
+	<div class="widget widget-category">
+		<h3 class="widget-title">文章归档</h3>
+		<ul>
+			{% for tag in tags|mArchive %}
+			<li>
+				<a href="#">{{ tag[0] }}  ({{ tag[1] }})</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endif %}

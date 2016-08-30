@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block article %}
+	{% if post %}
+		{% for tmp in post %}
+			<article class="post post-1">
+				<header class="entry-header">
+					<h1 class="entry-title">
+						<a href="single.html">{{ tmp.title }}</a>
+					</h1>
+					{% if tmp.tags %}
+					<div class="entry-meta">
+						{% for tag in tmp.tags %}
+						<span class="post-category"><a href="#">{{ tag }}</a></span>
+						{% endfor %}
+					</div>
+					{% endif %}
+				</header>
+				<div class="entry-content clearfix">
+					<p>{{ tmp.content }}</p>
+					<div class="read-more cl-effect-14">
+						<a href="/post/{{ tmp.id }}" class="more-link">Continue reading <span class="meta-nav">→</span></a>
+					</div>
+				</div>
+			</article>
+		{% endfor %}
+	{% endif %}
+{% endblock article %}
+
+{% block aside %}
+	{% include 'aside.html' %}
+{% endblock aside %}

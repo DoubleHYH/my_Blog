@@ -1,2 +1,3 @@
 # my_Blog
-a simple blog .flask + mongoDB
+
+a simple blog. use flask and mongoDB

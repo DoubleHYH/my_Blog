@@ -1,0 +1,11 @@
+{% extends 'admin/model/create.html' %}
+{% block head %}
+	<link href="{{ url_for('static', filename='css/bootstrap-markdown.min.css') }}" rel="stylesheet">
+	{{ super() }}
+{% endblock %}
+
+
+{% block tail %}
+{{ super() }}
+	<script src="{{ url_for('static', filename='js/bootstrap-markdown.js') }}"></script>
+{% endblock %}

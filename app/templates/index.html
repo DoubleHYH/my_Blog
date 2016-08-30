@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block article %}
+	{% if paginator.items %}
+		{% for post in paginator.items %}
+			<article class="post post-1">
+				<header class="entry-header">
+					<h1 class="entry-title">
+						<a href="single.html">{{ post.title }}</a>
+					</h1>
+					{% if post.tags %}
+					<div class="entry-meta">
+						{% for tag in post.tags %}
+						<span class="post-category"><a href="#">{{ tag }}</a></span>
+						{% endfor %}
+					</div>
+					{% endif %}
+				</header>
+				<div class="entry-content clearfix">
+					<p>{{ post.content }}</p>
+					<div class="read-more cl-effect-14">
+						<a href="/post/{{ post.id }}" class="more-link">Continue reading <span class="meta-nav">→</span></a>
+					</div>
+				</div>
+			</article>
+		{% endfor %}
+	{% endif %}
+{% endblock article %}
+
+{% block aside %}
+	{% include 'aside.html' %}
+{% endblock aside %}
+
+{% block pageinator %}
+	{% include 'pageinator.html' %}
+{% endblock pageinator %}

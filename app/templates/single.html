@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block article %}
+	{% if post %}
+		<article class="post post-1">
+			<header class="entry-header">
+				<h1 class="entry-title">{{ post.title }}</h1>
+				<div class="entry-meta">
+				{% if post.tags %}
+					{% for tag in post.tags %}
+						<span class="post-category"><a href="#">{{ tag }}</a></span>
+					{% endfor %}
+				{% endif %}
+					<span class="post-date"><a href="#"><time class="entry-date" datetime="2012-11-09T23:15:57+00:00">February 2, 2013</time></a></span>
+					<span class="post-author"><a href="#">{{ post.author.name }}</a></span>
+					<span class="comments-link"><a href="#">4 Comments</a></span>
+				</div>
+			</header>
+			<div class="entry-content clearfix">
+				{{ post.content|markdown }}
+			</div>
+		</article>
+	{% endif %}
+{% endblock article %}
+
+{% block aside %}
+	{% include 'aside.html' %}
+{% endblock aside %}
