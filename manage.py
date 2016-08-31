@@ -10,8 +10,8 @@ manager.add_command("runserver",
 					Server(host='127.0.0.1',
 							port=5000,
 							use_debugger=True))
-
-@manager.command
+@manager.option('-u', '--name', dest='mName', default='admin')
+@manager.option('-p', '--password', dest='mPassword', default='123456')
 def addUser(mName,mPassword):
 	admin = User(name=mName, password=generate_password_hash(mPassword))
 	admin.save()
