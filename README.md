@@ -16,8 +16,10 @@ a simple blog. use flask and mongoDB
 + 部署
 
   使用前最好先用`manage.py`中的`addUser`和`addPost`添加一个用户和一篇文章，内容随意
+    
       python manage.py addUser -u admin -p 123456
       python manage.py addPost
+  
   `etc`文件夹中存放了两个配置文件，是为了方便自己部署的，可以删除。
 
 + 遗留
