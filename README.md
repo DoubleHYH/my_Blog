@@ -33,4 +33,4 @@ a simple blog. use flask and mongoDB
     5. 前端展示的时间问题；
     6. 移动端浏览时效果不理想。
 
-博客地址：[DoubleH & Blog](www.doubleh.cf)
+博客地址：~~[DoubleH & Blog]()~~
